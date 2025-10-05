@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class config_HeadlessandIncognito {
+public class Config_HeadlessandIncognito {
 
 	public static void main(String[] args) 
 	{
