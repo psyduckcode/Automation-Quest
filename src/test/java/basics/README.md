@@ -1,10 +1,10 @@
-01-Basics
+# 01-Basics
 
 This folder contains foundational Selenium automation scripts and examples for beginners. It covers essential concepts for interacting with web applications.
 
 Folder Structure
   01-Basics/
-│   ├── Locators/               
+│   ├── Locators/              
 │   │   └── Scripts demonstrating usage of:
 │   │       • ID
 │   │       • Name
