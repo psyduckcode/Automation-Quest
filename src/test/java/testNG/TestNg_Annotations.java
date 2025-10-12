@@ -8,42 +8,37 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class TestNg_Annotations 
-{
+public class TestNg_Annotations {
 
 	public WebDriver driver;
 
 	// Runs once before the entire test suite starts
 	@BeforeSuite
-	public void setupSuite() 
-	{
+	public void setupSuite() {
 		System.out.println(" Before Suite: Setting up environment");
 	}
 
 	// Runs before any test defined in the <test> tag of the TestNG XML file
 	@BeforeTest
-	public void setupTest()
-	{
+	public void setupTest() {
 		System.out.println(" Before Test: Preparing test-specific resources");
 	}
-	
+
 	// Runs once before any @Test method in this class
 	@BeforeClass
-	public void setupClass() 
-	{
+	public void setupClass() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		System.out.println(" Chrome Browser Launched");
 	}
-	
+
 	// Runs before each @Test method
 	@BeforeMethod
-	public void setupMethod() 
-	{
+	public void setupMethod() {
 		System.out.println("Before Method: Navigating to login page");
 		driver.get("https://practicetestautomation.com/practice-test-login/");
 	}
-	
+
 	// Test Case 1: Validate invalid login attempt
 	@Test(priority = 1)
 	public void testInvalidLogin() {
@@ -55,11 +50,10 @@ public class TestNg_Annotations
 		Assert.assertTrue(errorMsg.contains("Your password is invalid!"));
 		System.out.println("Invalid Login Test Passed (Error validated)");
 	}
-	
+
 	// Test Case 2: Validate successful login
 	@Test(priority = 2)
-	public void testValidLogin() 
-	{
+	public void testValidLogin() {
 		driver.findElement(By.id("username")).sendKeys("student");
 		driver.findElement(By.id("password")).sendKeys("Password123");
 		driver.findElement(By.id("submit")).click();
@@ -71,11 +65,9 @@ public class TestNg_Annotations
 
 	// Runs after each @Test method
 	@AfterMethod
-	public void tearDownMethod() 
-	{
+	public void tearDownMethod() {
 		System.out.println("After Method: Resetting test state");
-		try 
-		{
+		try {
 			driver.findElement(By.id("username")).clear();
 			driver.findElement(By.id("password")).clear();
 		} catch (Exception e) {
@@ -85,23 +77,20 @@ public class TestNg_Annotations
 
 	// Runs once after all @Test methods in this class
 	@AfterClass
-	public void tearDownClass()
-	{
+	public void tearDownClass() {
 		driver.quit();
 		System.out.println("Browser Closed");
 	}
 
 	// Runs once after all tests under <test> tag are complete
 	@AfterTest
-	public void tearDownTest() 
-	{
+	public void tearDownTest() {
 		System.out.println("After Test: Cleaning up test resources");
 	}
-	
+
 	// Runs once after the entire test suite has finished
 	@AfterSuite
-	public void tearDownSuite() 
-	{
+	public void tearDownSuite() {
 		System.out.println("After Suite: Environment cleanup completed");
 	}
 }

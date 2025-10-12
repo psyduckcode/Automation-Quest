@@ -23,6 +23,8 @@ public class dataDrivenTesting {
 		// Open WebSite
 		driver.get("https://practicetestautomation.com/practice-test-login/");
 		driver.manage().window().maximize();
+		
+	
 
 		// Locate Username, Password Input Fields and Login Button
 		WebElement username = driver.findElement(By.xpath("//input[@id='username']"));
@@ -66,6 +68,7 @@ public class dataDrivenTesting {
 				WebElement logOut = driver
 						.findElement(By.xpath("//div[@class='wp-block-button aligncenter is-style-fill']"));
 				logOut.click();
+			
 			}
 
 			// If Result Column does not exist, create it

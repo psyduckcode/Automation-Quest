@@ -1,4 +1,4 @@
-//Implicit Wait
+//Selenium Java Program: Implicit Wait Example
 
 package waits;
 

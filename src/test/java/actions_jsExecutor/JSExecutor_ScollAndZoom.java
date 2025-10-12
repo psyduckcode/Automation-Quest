@@ -1,3 +1,5 @@
+//JavScriptExecutor to Scroll and Zoom
+
 package actions_jsExecutor;
 
 import org.openqa.selenium.By;
